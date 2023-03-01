@@ -8,11 +8,20 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.6.5
+  shared_preferences: ^2.0.16
+  dio: ^5.0.1
+
   flutter: 
     sdk: flutter
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
+  freezed: ^2.3.2
+  build_runner: ^2.3.3
+  freezed_annotation: ^2.2.0
+  json_serializable: ^6.6.1
+  dartz: ^0.10.0-nullsafety.2
+
   flutter_test: 
     sdk: flutter
 
