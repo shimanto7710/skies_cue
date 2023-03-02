@@ -1,28 +1,35 @@
+import 'package:skies_cue/app/data/weather_error_model/error_model/error_model.dart';
+
+import '../../data/weather_error_model/weather_error_model.dart';
 import '../../data/weather_model/weather_model.dart';
 import '../api.dart';
 import 'package:dartz/dartz.dart';
 
 class HomeService {
   HomeService._internal();
-
   static final _singleton = HomeService._internal();
-
   factory HomeService() => _singleton;
 
-  // static HomeService? _instance;
-  // factory HomeService() => _instance ??= HomeService._();
-  // HomeService._();
-
-  /*Future<WeatherModel> getWeatherResponse() async {
-    var response = await Api().dio.get('current');
-    return WeatherModel.fromJson(response.data);
-  }*/
-  Future<Either<String, WeatherModel>> getCurrentWeatherResponse() async {
+  Future<Either<WeatherErrorModel, WeatherModel>>
+      getCurrentWeatherResponse() async {
     try {
       var _response = await Api().dio.get('current');
-      return Right<String, WeatherModel>(WeatherModel.fromJson(_response.data));
+
+      final WeatherModel _weatherModel = WeatherModel.fromJson(_response.data);
+
+      if (_weatherModel.request == null) {
+        return Left<WeatherErrorModel, WeatherModel>(
+            WeatherErrorModel.fromJson(_response.data));
+      }
+      return Right<WeatherErrorModel, WeatherModel>(_weatherModel);
     } catch (exception) {
-      return Left<String, WeatherModel>(exception.toString());
+      final WeatherErrorModel errorModel = WeatherErrorModel(
+          success: false,
+          error: ErrorModel(
+              code: 404,
+              type: "something went wrong",
+              info: exception.toString()));
+      return Left<WeatherErrorModel, WeatherModel>(errorModel);
     }
   }
 }

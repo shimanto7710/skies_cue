@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:skies_cue/app/utilities/constant.dart';
 
+import '../../../widgets/custom_error.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -16,16 +17,31 @@ class HomeView extends GetView<HomeController> {
           centerTitle: true,
         ),
         body: GetX<HomeController>(builder: (_) {
-          switch (controller.isDataFetched.value) {
-            case 0:
+          if (controller.apiStatus.value == AppState.loading.name) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (controller.apiStatus.value == AppState.loaded.name) {
+            return const Center(
+              child: Text("successful "),
+            );
+          } else {
+            return CustomError(
+              key: key,
+              summary: controller.errorText.value,
+            );
+          }
+          /*switch (controller.apiStatus.value) {
+            case AppState.loading.name:
               return const Center(child: CircularProgressIndicator());
-            case 1:
+            case "loaded":
               return const Center(
                 child: Text("successful "),
               );
             default:
-              return Center(child: Text(controller.errorText.value));
-          }
+              return CustomError(
+                key: key,
+                summary: controller.errorText.value,
+              );
+          }*/
         }));
   }
 }

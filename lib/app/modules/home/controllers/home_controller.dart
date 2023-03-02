@@ -2,16 +2,20 @@ import 'package:get/get.dart';
 import 'package:dartz/dartz.dart';
 import 'package:skies_cue/app/data/weather_model/weather_model.dart';
 import 'package:skies_cue/app/network/home_service/home_service.dart';
+import 'package:skies_cue/app/utilities/constant.dart';
+
+import '../../../data/weather_error_model/weather_error_model.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
 
-  RxInt isDataFetched = 0.obs;
+  RxString apiStatus = AppState.loading.name.obs;
   RxString errorText = "".obs;
-  final service = HomeService();
+  late final service;
 
   @override
   void onInit() {
+    service = HomeService();
     _fetchCurrentWeatherData();
     super.onInit();
   }
@@ -27,15 +31,14 @@ class HomeController extends GetxController {
   }
 
   void _fetchCurrentWeatherData() async {
-    final Either<String, WeatherModel> _response =
+    final Either<WeatherErrorModel, WeatherModel> _response =
         await service.getCurrentWeatherResponse();
 
-    _response.fold((String error) {
-      isDataFetched.value = -1;
-      errorText.value=error;
+    _response.fold((WeatherErrorModel errorModel) {
+      apiStatus.value = AppState.failed.name;
+      errorText.value = errorModel.error!.info!;
     }, (WeatherModel result) {
-      isDataFetched.value = 1;
+      apiStatus.value = AppState.loaded.name;
     });
   }
-// void increment() => count.value++;
 }
