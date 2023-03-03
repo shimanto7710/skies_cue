@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:skies_cue/app/shared_pref/pref_manager.dart';
 
 import '../utilities/constant.dart';
 
@@ -10,10 +11,11 @@ class AppInterceptors extends Interceptor {
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    options.queryParameters = {
+    String region=await SharedPrefManager().getRegion();
+    options.queryParameters.addAll({
       "access_key": Constant.accessKey,
-      "query": Constant.region,
-    };
+      "query": region,
+    });
 
     return handler.next(options);
   }

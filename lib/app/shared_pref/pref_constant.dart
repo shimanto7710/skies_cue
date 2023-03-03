@@ -1,4 +1,5 @@
 
 class PrefConstant{
-  static String accessKey="";
+  static String temperatureUnitKey="temperatureUnit";
+  static String regionKey="region";
 }

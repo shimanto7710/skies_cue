@@ -1,48 +1,26 @@
-
-
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skies_cue/app/shared_pref/pref_constant.dart';
+import 'package:skies_cue/app/utilities/constant.dart';
 
 class SharedPrefManager {
-
-  /*Future setString(String key, String value) async {
+  Future setTemperatureUnit(String value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(key, value);
+    prefs.setString(PrefConstant.temperatureUnitKey, value);
   }
 
-  Future<String> getString(String key) async {
+  Future<String> getTemperatureUnit() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(key) ?? "";
+    return prefs.getString(PrefConstant.temperatureUnitKey) ??
+        Constant.celsiusUnit;
   }
 
-  Future setInt(String key, int value) async {
+  Future setRegion(String value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setInt(key, value);
+    prefs.setString(PrefConstant.regionKey, value);
   }
 
-  Future<int> getInt(String key) async {
+  Future<String> getRegion() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(key) ?? 0;
+    return prefs.getString(PrefConstant.regionKey) ?? Constant.region;
   }
-
-  Future setBool(String key, bool value) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool(key, value);
-  }
-
-  Future<bool> getBool(String key) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(key) ?? false;
-  }*/
-
-  Future setAccessKey(String value) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(PrefConstant.accessKey, value);
-  }
-
-  Future<String> getAccessKey() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(PrefConstant.accessKey) ?? "";
-  }
-
 }

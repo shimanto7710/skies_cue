@@ -20,7 +20,7 @@ RequestModel _$RequestModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RequestModel {
-  String? get name => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   String? get query => throw _privateConstructorUsedError;
   String? get language => throw _privateConstructorUsedError;
   String? get unit => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $RequestModelCopyWith<$Res> {
           RequestModel value, $Res Function(RequestModel) then) =
       _$RequestModelCopyWithImpl<$Res, RequestModel>;
   @useResult
-  $Res call({String? name, String? query, String? language, String? unit});
+  $Res call({String? type, String? query, String? language, String? unit});
 }
 
 /// @nodoc
@@ -53,15 +53,15 @@ class _$RequestModelCopyWithImpl<$Res, $Val extends RequestModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? type = freezed,
     Object? query = freezed,
     Object? language = freezed,
     Object? unit = freezed,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String?,
       query: freezed == query
           ? _value.query
@@ -87,7 +87,7 @@ abstract class _$$_RequestModelCopyWith<$Res>
       __$$_RequestModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String? query, String? language, String? unit});
+  $Res call({String? type, String? query, String? language, String? unit});
 }
 
 /// @nodoc
@@ -101,15 +101,15 @@ class __$$_RequestModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? type = freezed,
     Object? query = freezed,
     Object? language = freezed,
     Object? unit = freezed,
   }) {
     return _then(_$_RequestModel(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String?,
       query: freezed == query
           ? _value.query
@@ -130,13 +130,13 @@ class __$$_RequestModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_RequestModel implements _RequestModel {
-  const _$_RequestModel({this.name, this.query, this.language, this.unit});
+  const _$_RequestModel({this.type, this.query, this.language, this.unit});
 
   factory _$_RequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_RequestModelFromJson(json);
 
   @override
-  final String? name;
+  final String? type;
   @override
   final String? query;
   @override
@@ -146,7 +146,7 @@ class _$_RequestModel implements _RequestModel {
 
   @override
   String toString() {
-    return 'RequestModel(name: $name, query: $query, language: $language, unit: $unit)';
+    return 'RequestModel(type: $type, query: $query, language: $language, unit: $unit)';
   }
 
   @override
@@ -154,7 +154,7 @@ class _$_RequestModel implements _RequestModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RequestModel &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.language, language) ||
                 other.language == language) &&
@@ -163,7 +163,7 @@ class _$_RequestModel implements _RequestModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, query, language, unit);
+  int get hashCode => Object.hash(runtimeType, type, query, language, unit);
 
   @JsonKey(ignore: true)
   @override
@@ -181,7 +181,7 @@ class _$_RequestModel implements _RequestModel {
 
 abstract class _RequestModel implements RequestModel {
   const factory _RequestModel(
-      {final String? name,
+      {final String? type,
       final String? query,
       final String? language,
       final String? unit}) = _$_RequestModel;
@@ -190,7 +190,7 @@ abstract class _RequestModel implements RequestModel {
       _$_RequestModel.fromJson;
 
   @override
-  String? get name;
+  String? get type;
   @override
   String? get query;
   @override

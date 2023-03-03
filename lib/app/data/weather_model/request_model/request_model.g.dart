@@ -8,7 +8,7 @@ part of 'request_model.dart';
 
 _$_RequestModel _$$_RequestModelFromJson(Map<String, dynamic> json) =>
     _$_RequestModel(
-      name: json['name'] as String?,
+      type: json['type'] as String?,
       query: json['query'] as String?,
       language: json['language'] as String?,
       unit: json['unit'] as String?,
@@ -16,7 +16,7 @@ _$_RequestModel _$$_RequestModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_RequestModelToJson(_$_RequestModel instance) =>
     <String, dynamic>{
-      'name': instance.name,
+      'type': instance.type,
       'query': instance.query,
       'language': instance.language,
       'unit': instance.unit,

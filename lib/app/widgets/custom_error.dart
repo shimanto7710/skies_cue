@@ -1,14 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:skies_cue/app/style/app_color.dart';
 import 'package:skies_cue/app/utilities/constant.dart';
 
 class CustomError extends StatelessWidget {
   // final FlutterErrorDetails errorDetails;
-  late String summary;
+  final String summary;
+  final Function onReload;
 
-  CustomError({
+  const CustomError({
     super.key,
-    required this.summary,
+    required this.summary, required this.onReload,
   });
 
   @override
@@ -33,6 +35,25 @@ class CustomError extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(color: Colors.black, fontSize: 14),
             ),
+            const SizedBox(height: 30,),
+            MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(3.0)),
+              height: 45,
+              elevation: 0,
+              color: AppColor.primaryColor,
+              child: Container(
+                alignment: Alignment.center,
+                width: 120,
+                child: const Text(
+                  Constant.tryAgain,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              onPressed: () {
+                onReload();
+              },
+            )
           ],
         ),
       ),

@@ -25,9 +25,13 @@ mixin _$LocationModel {
   String? get region => throw _privateConstructorUsedError;
   String? get lat => throw _privateConstructorUsedError;
   String? get lon => throw _privateConstructorUsedError;
+  @JsonKey(name: 'timezone_id')
   String? get timezoneId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'localtime')
   String? get localtime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'localtime_epoch')
   int? get localtimeEpoch => throw _privateConstructorUsedError;
+  @JsonKey(name: 'utc_offset')
   String? get utcOffset => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,10 +52,10 @@ abstract class $LocationModelCopyWith<$Res> {
       String? region,
       String? lat,
       String? lon,
-      String? timezoneId,
-      String? localtime,
-      int? localtimeEpoch,
-      String? utcOffset});
+      @JsonKey(name: 'timezone_id') String? timezoneId,
+      @JsonKey(name: 'localtime') String? localtime,
+      @JsonKey(name: 'localtime_epoch') int? localtimeEpoch,
+      @JsonKey(name: 'utc_offset') String? utcOffset});
 }
 
 /// @nodoc
@@ -132,10 +136,10 @@ abstract class _$$_LocationModelCopyWith<$Res>
       String? region,
       String? lat,
       String? lon,
-      String? timezoneId,
-      String? localtime,
-      int? localtimeEpoch,
-      String? utcOffset});
+      @JsonKey(name: 'timezone_id') String? timezoneId,
+      @JsonKey(name: 'localtime') String? localtime,
+      @JsonKey(name: 'localtime_epoch') int? localtimeEpoch,
+      @JsonKey(name: 'utc_offset') String? utcOffset});
 }
 
 /// @nodoc
@@ -209,10 +213,10 @@ class _$_LocationModel implements _LocationModel {
       this.region,
       this.lat,
       this.lon,
-      this.timezoneId,
-      this.localtime,
-      this.localtimeEpoch,
-      this.utcOffset});
+      @JsonKey(name: 'timezone_id') this.timezoneId,
+      @JsonKey(name: 'localtime') this.localtime,
+      @JsonKey(name: 'localtime_epoch') this.localtimeEpoch,
+      @JsonKey(name: 'utc_offset') this.utcOffset});
 
   factory _$_LocationModel.fromJson(Map<String, dynamic> json) =>
       _$$_LocationModelFromJson(json);
@@ -228,12 +232,16 @@ class _$_LocationModel implements _LocationModel {
   @override
   final String? lon;
   @override
+  @JsonKey(name: 'timezone_id')
   final String? timezoneId;
   @override
+  @JsonKey(name: 'localtime')
   final String? localtime;
   @override
+  @JsonKey(name: 'localtime_epoch')
   final int? localtimeEpoch;
   @override
+  @JsonKey(name: 'utc_offset')
   final String? utcOffset;
 
   @override
@@ -287,10 +295,10 @@ abstract class _LocationModel implements LocationModel {
       final String? region,
       final String? lat,
       final String? lon,
-      final String? timezoneId,
-      final String? localtime,
-      final int? localtimeEpoch,
-      final String? utcOffset}) = _$_LocationModel;
+      @JsonKey(name: 'timezone_id') final String? timezoneId,
+      @JsonKey(name: 'localtime') final String? localtime,
+      @JsonKey(name: 'localtime_epoch') final int? localtimeEpoch,
+      @JsonKey(name: 'utc_offset') final String? utcOffset}) = _$_LocationModel;
 
   factory _LocationModel.fromJson(Map<String, dynamic> json) =
       _$_LocationModel.fromJson;
@@ -306,12 +314,16 @@ abstract class _LocationModel implements LocationModel {
   @override
   String? get lon;
   @override
+  @JsonKey(name: 'timezone_id')
   String? get timezoneId;
   @override
+  @JsonKey(name: 'localtime')
   String? get localtime;
   @override
+  @JsonKey(name: 'localtime_epoch')
   int? get localtimeEpoch;
   @override
+  @JsonKey(name: 'utc_offset')
   String? get utcOffset;
   @override
   @JsonKey(ignore: true)

@@ -20,21 +20,30 @@ CurrentModel _$CurrentModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CurrentModel {
+  @JsonKey(name: 'observation_time')
   String? get observationTime => throw _privateConstructorUsedError;
   int? get temperature => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weather_code')
   int? get weatherCode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weather_icons')
   List<String>? get weatherIcons => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weather_descriptions')
   List<String>? get weatherDescriptions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wind_speed')
   int? get windSpeed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wind_degree')
   int? get windDegree => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wind_dir')
   String? get windDir => throw _privateConstructorUsedError;
   int? get pressure => throw _privateConstructorUsedError;
   int? get precip => throw _privateConstructorUsedError;
   int? get humidity => throw _privateConstructorUsedError;
   int? get cloudcover => throw _privateConstructorUsedError;
   int? get feelslike => throw _privateConstructorUsedError;
+  @JsonKey(name: 'uv_index')
   int? get uvIndex => throw _privateConstructorUsedError;
   int? get visibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_day')
   String? get isDay => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,22 +59,22 @@ abstract class $CurrentModelCopyWith<$Res> {
       _$CurrentModelCopyWithImpl<$Res, CurrentModel>;
   @useResult
   $Res call(
-      {String? observationTime,
+      {@JsonKey(name: 'observation_time') String? observationTime,
       int? temperature,
-      int? weatherCode,
-      List<String>? weatherIcons,
-      List<String>? weatherDescriptions,
-      int? windSpeed,
-      int? windDegree,
-      String? windDir,
+      @JsonKey(name: 'weather_code') int? weatherCode,
+      @JsonKey(name: 'weather_icons') List<String>? weatherIcons,
+      @JsonKey(name: 'weather_descriptions') List<String>? weatherDescriptions,
+      @JsonKey(name: 'wind_speed') int? windSpeed,
+      @JsonKey(name: 'wind_degree') int? windDegree,
+      @JsonKey(name: 'wind_dir') String? windDir,
       int? pressure,
       int? precip,
       int? humidity,
       int? cloudcover,
       int? feelslike,
-      int? uvIndex,
+      @JsonKey(name: 'uv_index') int? uvIndex,
       int? visibility,
-      String? isDay});
+      @JsonKey(name: 'is_day') String? isDay});
 }
 
 /// @nodoc
@@ -176,22 +185,22 @@ abstract class _$$_CurrentModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? observationTime,
+      {@JsonKey(name: 'observation_time') String? observationTime,
       int? temperature,
-      int? weatherCode,
-      List<String>? weatherIcons,
-      List<String>? weatherDescriptions,
-      int? windSpeed,
-      int? windDegree,
-      String? windDir,
+      @JsonKey(name: 'weather_code') int? weatherCode,
+      @JsonKey(name: 'weather_icons') List<String>? weatherIcons,
+      @JsonKey(name: 'weather_descriptions') List<String>? weatherDescriptions,
+      @JsonKey(name: 'wind_speed') int? windSpeed,
+      @JsonKey(name: 'wind_degree') int? windDegree,
+      @JsonKey(name: 'wind_dir') String? windDir,
       int? pressure,
       int? precip,
       int? humidity,
       int? cloudcover,
       int? feelslike,
-      int? uvIndex,
+      @JsonKey(name: 'uv_index') int? uvIndex,
       int? visibility,
-      String? isDay});
+      @JsonKey(name: 'is_day') String? isDay});
 }
 
 /// @nodoc
@@ -293,24 +302,33 @@ class __$$_CurrentModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CurrentModel implements _CurrentModel {
+class _$_CurrentModel with DiagnosticableTreeMixin implements _CurrentModel {
   const _$_CurrentModel(
-      {this.observationTime,
+      {@JsonKey(name: 'observation_time')
+          this.observationTime,
       this.temperature,
-      this.weatherCode,
-      final List<String>? weatherIcons,
-      final List<String>? weatherDescriptions,
-      this.windSpeed,
-      this.windDegree,
-      this.windDir,
+      @JsonKey(name: 'weather_code')
+          this.weatherCode,
+      @JsonKey(name: 'weather_icons')
+          final List<String>? weatherIcons,
+      @JsonKey(name: 'weather_descriptions')
+          final List<String>? weatherDescriptions,
+      @JsonKey(name: 'wind_speed')
+          this.windSpeed,
+      @JsonKey(name: 'wind_degree')
+          this.windDegree,
+      @JsonKey(name: 'wind_dir')
+          this.windDir,
       this.pressure,
       this.precip,
       this.humidity,
       this.cloudcover,
       this.feelslike,
-      this.uvIndex,
+      @JsonKey(name: 'uv_index')
+          this.uvIndex,
       this.visibility,
-      this.isDay})
+      @JsonKey(name: 'is_day')
+          this.isDay})
       : _weatherIcons = weatherIcons,
         _weatherDescriptions = weatherDescriptions;
 
@@ -318,13 +336,16 @@ class _$_CurrentModel implements _CurrentModel {
       _$$_CurrentModelFromJson(json);
 
   @override
+  @JsonKey(name: 'observation_time')
   final String? observationTime;
   @override
   final int? temperature;
   @override
+  @JsonKey(name: 'weather_code')
   final int? weatherCode;
   final List<String>? _weatherIcons;
   @override
+  @JsonKey(name: 'weather_icons')
   List<String>? get weatherIcons {
     final value = _weatherIcons;
     if (value == null) return null;
@@ -335,6 +356,7 @@ class _$_CurrentModel implements _CurrentModel {
 
   final List<String>? _weatherDescriptions;
   @override
+  @JsonKey(name: 'weather_descriptions')
   List<String>? get weatherDescriptions {
     final value = _weatherDescriptions;
     if (value == null) return null;
@@ -345,10 +367,13 @@ class _$_CurrentModel implements _CurrentModel {
   }
 
   @override
+  @JsonKey(name: 'wind_speed')
   final int? windSpeed;
   @override
+  @JsonKey(name: 'wind_degree')
   final int? windDegree;
   @override
+  @JsonKey(name: 'wind_dir')
   final String? windDir;
   @override
   final int? pressure;
@@ -361,15 +386,40 @@ class _$_CurrentModel implements _CurrentModel {
   @override
   final int? feelslike;
   @override
+  @JsonKey(name: 'uv_index')
   final int? uvIndex;
   @override
   final int? visibility;
   @override
+  @JsonKey(name: 'is_day')
   final String? isDay;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CurrentModel(observationTime: $observationTime, temperature: $temperature, weatherCode: $weatherCode, weatherIcons: $weatherIcons, weatherDescriptions: $weatherDescriptions, windSpeed: $windSpeed, windDegree: $windDegree, windDir: $windDir, pressure: $pressure, precip: $precip, humidity: $humidity, cloudcover: $cloudcover, feelslike: $feelslike, uvIndex: $uvIndex, visibility: $visibility, isDay: $isDay)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CurrentModel'))
+      ..add(DiagnosticsProperty('observationTime', observationTime))
+      ..add(DiagnosticsProperty('temperature', temperature))
+      ..add(DiagnosticsProperty('weatherCode', weatherCode))
+      ..add(DiagnosticsProperty('weatherIcons', weatherIcons))
+      ..add(DiagnosticsProperty('weatherDescriptions', weatherDescriptions))
+      ..add(DiagnosticsProperty('windSpeed', windSpeed))
+      ..add(DiagnosticsProperty('windDegree', windDegree))
+      ..add(DiagnosticsProperty('windDir', windDir))
+      ..add(DiagnosticsProperty('pressure', pressure))
+      ..add(DiagnosticsProperty('precip', precip))
+      ..add(DiagnosticsProperty('humidity', humidity))
+      ..add(DiagnosticsProperty('cloudcover', cloudcover))
+      ..add(DiagnosticsProperty('feelslike', feelslike))
+      ..add(DiagnosticsProperty('uvIndex', uvIndex))
+      ..add(DiagnosticsProperty('visibility', visibility))
+      ..add(DiagnosticsProperty('isDay', isDay));
   }
 
   @override
@@ -444,41 +494,57 @@ class _$_CurrentModel implements _CurrentModel {
 
 abstract class _CurrentModel implements CurrentModel {
   const factory _CurrentModel(
-      {final String? observationTime,
+      {@JsonKey(name: 'observation_time')
+          final String? observationTime,
       final int? temperature,
-      final int? weatherCode,
-      final List<String>? weatherIcons,
-      final List<String>? weatherDescriptions,
-      final int? windSpeed,
-      final int? windDegree,
-      final String? windDir,
+      @JsonKey(name: 'weather_code')
+          final int? weatherCode,
+      @JsonKey(name: 'weather_icons')
+          final List<String>? weatherIcons,
+      @JsonKey(name: 'weather_descriptions')
+          final List<String>? weatherDescriptions,
+      @JsonKey(name: 'wind_speed')
+          final int? windSpeed,
+      @JsonKey(name: 'wind_degree')
+          final int? windDegree,
+      @JsonKey(name: 'wind_dir')
+          final String? windDir,
       final int? pressure,
       final int? precip,
       final int? humidity,
       final int? cloudcover,
       final int? feelslike,
-      final int? uvIndex,
+      @JsonKey(name: 'uv_index')
+          final int? uvIndex,
       final int? visibility,
-      final String? isDay}) = _$_CurrentModel;
+      @JsonKey(name: 'is_day')
+          final String? isDay}) = _$_CurrentModel;
 
   factory _CurrentModel.fromJson(Map<String, dynamic> json) =
       _$_CurrentModel.fromJson;
 
   @override
+  @JsonKey(name: 'observation_time')
   String? get observationTime;
   @override
   int? get temperature;
   @override
+  @JsonKey(name: 'weather_code')
   int? get weatherCode;
   @override
+  @JsonKey(name: 'weather_icons')
   List<String>? get weatherIcons;
   @override
+  @JsonKey(name: 'weather_descriptions')
   List<String>? get weatherDescriptions;
   @override
+  @JsonKey(name: 'wind_speed')
   int? get windSpeed;
   @override
+  @JsonKey(name: 'wind_degree')
   int? get windDegree;
   @override
+  @JsonKey(name: 'wind_dir')
   String? get windDir;
   @override
   int? get pressure;
@@ -491,10 +557,12 @@ abstract class _CurrentModel implements CurrentModel {
   @override
   int? get feelslike;
   @override
+  @JsonKey(name: 'uv_index')
   int? get uvIndex;
   @override
   int? get visibility;
   @override
+  @JsonKey(name: 'is_day')
   String? get isDay;
   @override
   @JsonKey(ignore: true)

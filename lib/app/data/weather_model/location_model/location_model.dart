@@ -11,9 +11,13 @@ class LocationModel with _$LocationModel {
         String? region,
         String? lat,
         String? lon,
+        @JsonKey(name: 'timezone_id')
         String? timezoneId,
+        @JsonKey(name: 'localtime')
         String? localtime,
+        @JsonKey(name: 'localtime_epoch')
         int? localtimeEpoch,
+        @JsonKey(name: 'utc_offset')
         String? utcOffset}) = _LocationModel;
 
   factory LocationModel.fromJson(Map<String,dynamic> json) => _$LocationModelFromJson(json);

@@ -1,9 +1,11 @@
 import 'package:skies_cue/app/data/weather_error_model/error_model/error_model.dart';
 
-import '../../data/weather_error_model/weather_error_model.dart';
-import '../../data/weather_model/weather_model.dart';
-import '../api.dart';
+
 import 'package:dartz/dartz.dart';
+
+import '../../../data/weather_error_model/weather_error_model.dart';
+import '../../../data/weather_model/weather_model.dart';
+import '../../../network/api.dart';
 
 class HomeService {
   HomeService._internal();
@@ -11,9 +13,9 @@ class HomeService {
   factory HomeService() => _singleton;
 
   Future<Either<WeatherErrorModel, WeatherModel>>
-      getCurrentWeatherResponse() async {
+      getCurrentWeatherResponse(String unit) async {
     try {
-      var _response = await Api().dio.get('current');
+      var _response = await Api().dio.get('current', queryParameters: {"units":unit});
 
       final WeatherModel _weatherModel = WeatherModel.fromJson(_response.data);
 

@@ -6,7 +6,7 @@ part 'request_model.g.dart';
 @freezed
 class RequestModel with _$RequestModel {
   const factory RequestModel(
-      {String? name,
+      {String? type,
         String? query,
         String? language,
         String? unit}) = _RequestModel;
