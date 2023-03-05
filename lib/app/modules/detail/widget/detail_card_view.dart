@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../../style/app_color.dart';
-import '../../../utilities/constant.dart';
 
 class DetailCardView extends StatelessWidget {
   const DetailCardView({Key? key, required this.leftKey, required this.leftValue, required this.rightKey, required this.rightValue}) : super(key: key);

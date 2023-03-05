@@ -13,7 +13,7 @@ import '../../../routes/app_pages.dart';
 class HomeController extends GetxController {
   RxString apiState = AppState.loading.name.obs;
   RxString errorText = "".obs;
-  Rx<WeatherModel> currentWeatherModel = WeatherModel().obs;
+  Rx<WeatherModel> currentWeatherModel = const WeatherModel().obs;
   final List<RegionModel> regionList = Constant().regionModel;
   late HomeServiceInterface service;
 
@@ -28,24 +28,14 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
   void _fetchCurrentWeatherData(String unit, String region) async {
     apiState.value = AppState.loading.name;
-    final Either<WeatherErrorModel, WeatherModel> _response =
+    final Either<WeatherErrorModel, WeatherModel> response =
         await service.getCurrentWeather(unit, region);
 
-    _response.fold((WeatherErrorModel errorModel) {
-      apiState.value = AppState.failed.name;
+    response.fold((WeatherErrorModel errorModel) {
       errorText.value = errorModel.error!.info!;
+      apiState.value = AppState.failed.name;
     }, (WeatherModel result) {
       currentWeatherModel.value = result;
       SharedPrefManager().setTemperatureUnit(

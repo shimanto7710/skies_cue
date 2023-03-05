@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import '../../../shared_pref/pref_manager.dart';
 import '../../../style/app_color.dart';
 import '../../../utilities/constant.dart';
 import '../controllers/detail_controller.dart';
@@ -150,62 +148,6 @@ class DetailPageWidget extends StatelessWidget {
                               .currentWeatherModel.value.current?.humidity
                               .toString() ??
                           Constant.notFound),
-                  // Card(
-                  //   elevation: 0,
-                  //   color: AppColor.greyLight,
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(12.0),
-                  //   ),
-                  //   child: SizedBox(
-                  //     width: Get.width,
-                  //     child: Row(
-                  //       children: [
-                  //         Column(
-                  //           children: [
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(top: 15, left: 30),
-                  //               child: Text(
-                  //                 Constant.pressure,
-                  //                 style:
-                  //                 TextStyle(fontSize: 20, color: AppColor.grey),
-                  //               ),
-                  //             ),
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(
-                  //                   top: 5, left: 30, bottom: 15),
-                  //               child: Text(
-                  //                 controller.currentWeatherModel.value.current?.pressure.toString() ?? Constant.notFound,
-                  //                 style: TextStyle(
-                  //                     fontSize: 20, color: AppColor.black),
-                  //               ),
-                  //             )
-                  //           ],
-                  //         ),
-                  //         const Spacer(),
-                  //         Column(
-                  //           children: [
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(top: 15, left: 30, right: 30),
-                  //               child: Text(
-                  //                 Constant.humidity,
-                  //                 style:
-                  //                 TextStyle(fontSize: 20, color: AppColor.grey),
-                  //               ),
-                  //             ),
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(
-                  //                   top: 5, left: 30, bottom: 15, right: 30),
-                  //               child: Text(
-                  //                 controller.currentWeatherModel.value.current?.humidity.toString() ?? Constant.notFound,
-                  //                 style: TextStyle(
-                  //                     fontSize: 20, color: AppColor.black),
-                  //               ),
-                  //             )
-                  //           ],
-                  //         )
-                  //       ],
-                  //     ),
-                  //   ),),
                   DetailCardView(
                       key: key,
                       leftKey: Constant.cloudCover,
@@ -218,143 +160,10 @@ class DetailPageWidget extends StatelessWidget {
                               .currentWeatherModel.value.current?.visibility
                               .toString() ??
                           Constant.notFound),
-                  // Card(
-                  //   elevation: 0,
-                  //   color: AppColor.greyLight,
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(12.0),
-                  //   ),
-                  //   child: SizedBox(
-                  //     width: Get.width,
-                  //     child: Row(
-                  //       children: [
-                  //         Column(
-                  //           children: [
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(top: 15, left: 30),
-                  //               child: Text(
-                  //                 Constant.cloudCover,
-                  //                 style:
-                  //                 TextStyle(fontSize: 20, color: AppColor.grey),
-                  //               ),
-                  //             ),
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(
-                  //                   top: 5, left: 30, bottom: 15),
-                  //               child: Text(
-                  //                 controller.currentWeatherModel.value.current?.cloudcover.toString() ?? Constant.notFound,
-                  //                 style: TextStyle(
-                  //                     fontSize: 20, color: AppColor.black),
-                  //               ),
-                  //             )
-                  //           ],
-                  //         ),
-                  //         const Spacer(),
-                  //         Column(
-                  //           children: [
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(top: 15, left: 30, right: 30),
-                  //               child: Text(
-                  //                 Constant.visibility,
-                  //                 style:
-                  //                 TextStyle(fontSize: 20, color: AppColor.grey),
-                  //               ),
-                  //             ),
-                  //             Padding(
-                  //               padding: const EdgeInsets.only(
-                  //                   top: 5, left: 30, bottom: 15, right: 30),
-                  //               child: Text(
-                  //                 controller.currentWeatherModel.value.current?.visibility.toString() ?? Constant.notFound,
-                  //                 style: TextStyle(
-                  //                     fontSize: 20, color: AppColor.black),
-                  //               ),
-                  //             )
-                  //           ],
-                  //         )
-                  //       ],
-                  //     ),
-                  //   ),),
                 ],
               )),
         ),
       ],
     );
   }
-}
-
-
-class SliverGridWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          ///First sliver is the App Bar
-          SliverAppBar(
-            ///Properties of app bar
-            backgroundColor: Colors.white,
-            floating: false,
-            pinned: true,
-            expandedHeight: 200.0,
-
-            ///Properties of the App Bar when it is expanded
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              title: const Text(
-                "SliverGrid Widget",
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                ),
-              ),
-              background: Container(
-                decoration: const BoxDecoration(
-                  border: Border(
-                    top: BorderSide(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverGrid(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              ///no.of items in the horizontal axis
-              crossAxisCount: 2,
-            ),
-            ///Lazy building of list
-            delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                /// To convert this infinite list to a list with "n" no of items,
-                /// uncomment the following line:
-                /// if (index > n) return null;
-                return listItem(AppColor.primaryColor, "Sliver Grid item:\n$index");
-              },
-              /// Set childCount to limit no.of items
-              /// childCount: 100,
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget listItem(Color color, String title) => Container(
-    height: 100.0,
-    color: color,
-    child: Center(
-      child: Text(
-        "$title",
-        textAlign: TextAlign.center,
-        style: const TextStyle(
-            color: Colors.white,
-            fontSize: 10.0,
-            fontWeight: FontWeight.bold,
-            ),
-      ),
-    ),
-  );
 }

@@ -27,7 +27,7 @@ class HomeView extends GetView<HomeController> {
               return const Center(child: CircularProgressIndicator());
             } else if (controller.apiState.value == AppState.loaded.name) {
               if(orientation==Orientation.portrait){
-                return HomeViewLandscape(
+                return HomeViewPortrait(
                   key: key,
                   controller: controller,
                 );

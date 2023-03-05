@@ -24,14 +24,7 @@ class DetailView extends GetView<DetailController> {
       ),
       body: OrientationBuilder(builder: (BuildContext context, Orientation orientation){
         return RefreshIndicator(
-          onRefresh: () {
-            return Future.delayed(
-              const Duration(seconds: 1),
-                  () {
-                controller.onReload();
-              },
-            );
-          },
+          onRefresh: () async => controller.onReload(),
           child: GetX<DetailController>(
             builder: (_) {
               if (controller.apiState.value == AppState.loading.name) {

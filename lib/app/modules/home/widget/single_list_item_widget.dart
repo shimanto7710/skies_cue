@@ -24,8 +24,7 @@ class SingleListItemWidget extends StatelessWidget {
       child: MaterialButton(
         onPressed: () {
           controller.navigateToDetailPage(
-              controller,
-              controller.regionList[index].region);
+              controller, controller.regionList[index].region);
         },
         child: Container(
             padding: const EdgeInsets.only(
@@ -35,23 +34,24 @@ class SingleListItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(width: 40),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      controller.regionList[index].name,
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    Text(controller.regionList[index].division,
-                        style:
-                            TextStyle(fontSize: 12, color: AppColor.greyDark))
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        controller.regionList[index].name,
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Text(controller.regionList[index].division,
+                          style:
+                              TextStyle(fontSize: 12, color: AppColor.greyDark))
+                    ],
+                  ),
                 ),
-                const Spacer(),
                 const Icon(Icons.keyboard_arrow_right),
                 const SizedBox(
                   width: 32,

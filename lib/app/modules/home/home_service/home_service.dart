@@ -18,22 +18,22 @@ class HomeService implements HomeServiceInterface {
   Future<Either<WeatherErrorModel, WeatherModel>> getCurrentWeather(
       String unit, String region) async {
     try {
-      var _response = await Api()
+      var response = await Api()
           .dio
           .get('current', queryParameters: {"units": unit, "query": region});
 
-      final WeatherModel _weatherModel = WeatherModel.fromJson(_response.data);
+      final WeatherModel weatherModel = WeatherModel.fromJson(response.data);
 
-      if (_weatherModel.request == null) {
+      if (weatherModel.request == null) {
         return Left<WeatherErrorModel, WeatherModel>(
-            WeatherErrorModel.fromJson(_response.data));
+            WeatherErrorModel.fromJson(response.data));
       }
-      return Right<WeatherErrorModel, WeatherModel>(_weatherModel);
+      return Right<WeatherErrorModel, WeatherModel>(weatherModel);
     } catch (exception) {
       final WeatherErrorModel errorModel = WeatherErrorModel(
           success: false,
           error: ErrorModel(
-              code: 404,
+              code: 500,
               type: "something went wrong",
               info: exception.toString()));
       return Left<WeatherErrorModel, WeatherModel>(errorModel);
