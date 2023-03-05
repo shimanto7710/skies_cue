@@ -1,13 +1,17 @@
-
 class RegionModel {
-  int id;
-  String division;
-  String name;
+  final int id;
+  final String division;
+  final String name;
+  final String region;
 
-  RegionModel(this.id, this.division, this.name);
+  RegionModel(
+      {required this.id,
+      required this.division,
+      required this.name,
+      required this.region});
 
   @override
   String toString() {
-    return 'RegionModel{id: $id, division: $division, name: $name}';
+    return 'RegionModel{id: $id, division: $division, name: $name, region: $region}';
   }
 }

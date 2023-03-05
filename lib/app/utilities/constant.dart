@@ -8,8 +8,8 @@ class Constant {
   static const String baseUrl = "http://api.weatherstack.com/";
   static const String appName = "Skies Cue";
   static const String homeTitle = "Skies Cue";
-  static const String accessKey = "f2d4b517c72f6f8612bb8b5f849e1a1a";
-  static const String region = "BANGLADESH";
+  static const String accessKey = "bf7470df25255abf86b77379ce239a02";
+  static const String region = "Dhaka, BANGLADESH";
   static const String errorTitle = "Oups! Something went wrong!";
   static const String yourLocationNow = "Your Location Now";
   static const String seeDetails = "See Details";
@@ -19,17 +19,25 @@ class Constant {
   static const String celsius = "\u2103";
   static const String notFound = "Not Found";
   static const String tryAgain = "Try Again";
+  static const String windSpeed = "Wind Speed";
+  static const String windDegree = "Wind Degree";
+  static const String pressure = "Pressure";
+  static const String humidity = "Humidity";
+  static const String cloudCover = "Cloud Cover";
+  static const String visibility = "visibility";
+  static const String detail_title = "Details Page";
+  static const String setAsDefault = "Set As Default";
 
   final List<RegionModel> regionModel = [
-    RegionModel(1, "Dhaka", "Dhaka City Corporation "),
-    RegionModel(2, "Chittagong", "Chittagong City Corporation"),
-    RegionModel(2, "Chittagong", "Brahmanbaria Sadar"),
-    RegionModel(2, "Chittagong", "Cumilla Sadar"),
-    RegionModel(2, "Chittagong", "Cumilla Sadar"),
-    RegionModel(2, "Chittagong", "Cumilla Sadar"),
-    RegionModel(2, "Chittagong", "Cumilla Sadar"),
-    RegionModel(2, "Chittagong", "Cumilla Sadar"),
-    RegionModel(2, "Chittagong", "Cumilla Sadar"),
+    RegionModel(id:1, division: "Dhaka", name: "Dhaka City Corporation ", region: "Dhaka, Bangladesh"),
+    RegionModel(id: 2, division: "Chittagong", name: "Chittagong City Corporation", region: "Chittagong, Bangladesh"),
+    RegionModel(id: 3, division: "Chittagong", name: "Brahmanbaria Sadar", region: "Brahmanbaria, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
   ];
 
   // mock data

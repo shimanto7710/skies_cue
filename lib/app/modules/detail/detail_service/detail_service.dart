@@ -5,14 +5,14 @@ import 'package:dartz/dartz.dart';
 import '../../../data/weather_error_model/weather_error_model.dart';
 import '../../../data/weather_model/weather_model.dart';
 import '../../../network/api.dart';
-import 'home_service_interface.dart';
+import 'detail_service_interface.dart';
 
-class HomeService implements HomeServiceInterface {
-  HomeService._internal();
+class DetailService implements DetailServiceInterface {
+  DetailService._internal();
 
-  static final _singleton = HomeService._internal();
+  static final _singleton = DetailService._internal();
 
-  factory HomeService() => _singleton;
+  factory DetailService() => _singleton;
 
   @override
   Future<Either<WeatherErrorModel, WeatherModel>> getCurrentWeather(

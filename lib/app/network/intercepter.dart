@@ -11,11 +11,7 @@ class AppInterceptors extends Interceptor {
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    String region=await SharedPrefManager().getRegion();
-    options.queryParameters.addAll({
-      "access_key": Constant.accessKey,
-      "query": region,
-    });
+    options.queryParameters.addAll({"access_key": Constant.accessKey});
 
     return handler.next(options);
   }
