@@ -8,7 +8,8 @@ class Constant {
   static const String baseUrl = "http://api.weatherstack.com/";
   static const String appName = "Skies Cue";
   static const String homeTitle = "Skies Cue";
-  static const String accessKey = "bf7470df25255abf86b77379ce239a02";
+  // static const String accessKey = "bf7470df25255abf86b77379ce239a02";
+  static const String accessKey = "973a57695e4935092b4fdfdff931b3ab";
   static const String region = "Dhaka, BANGLADESH";
   static const String errorTitle = "Oups! Something went wrong!";
   static const String yourLocationNow = "Your Location Now";
@@ -31,13 +32,13 @@ class Constant {
   final List<RegionModel> regionModel = [
     RegionModel(id:1, division: "Dhaka", name: "Dhaka City Corporation ", region: "Dhaka, Bangladesh"),
     RegionModel(id: 2, division: "Chittagong", name: "Chittagong City Corporation", region: "Chittagong, Bangladesh"),
-    RegionModel(id: 3, division: "Chittagong", name: "Brahmanbaria Sadar", region: "Brahmanbaria, Bangladesh"),
-    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
-    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
-    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
-    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
-    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
-    RegionModel(id: 4, division: "Chittagong", name: "Comilla Sadar", region: "Comilla, Bangladesh"),
+    RegionModel(id: 3, division: "Chittagong", name: "Brahmanbaria", region: "Brahmanbaria, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Comilla", region: "Comilla, Bangladesh"),
+    RegionModel(id: 4, division: "Chittagong", name: "Chadpur", region: "Chadpur, Bangladesh"),
+    RegionModel(id: 4, division: "Dhaka", name: "Tangail", region: "Tangail, Bangladesh"),
+    RegionModel(id: 4, division: "Dhaka", name: "Narayanganj", region: "Narayanganj, Bangladesh"),
+    RegionModel(id: 4, division: "Dhaka", name: "Gazipur", region: "Gazipur, Bangladesh"),
+    RegionModel(id: 4, division: "Dhaka", name: "Gopalganj", region: "Gopalganj, Bangladesh"),
   ];
 
   // mock data
